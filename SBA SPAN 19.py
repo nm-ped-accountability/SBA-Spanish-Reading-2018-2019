@@ -1,4 +1,4 @@
-﻿#SBA SPAN - 2019.
+#SBA SPAN - 2019.
 #Jeanho Rodriguez.
 #Date: 6/28/2019.
 
@@ -312,8 +312,8 @@ WEB_SBA_SPAN_FINAL = WEB_SBA_SPAN_FINAL.iloc[:, np.r_[1,2,3,9,10,11,12]]
 WEB_SBA_SPAN_FINAL.drop(WEB_SBA_SPAN_FINAL[WEB_SBA_SPAN_FINAL.District== 'State Charter'].index, inplace=True)
 
 # encoding utf-8 producing undesirable characters.. use utf-8-sig or utf-16
-# excel converting strings to dates, save file as txt as workaround
-WEB_SBA_SPAN_FINAL.to_csv("WEB_SBA_SPAN_FINAL.txt", sep=',', encoding='utf-8-sig', index = False)
+# excel converting strings to dates, save file as txt and use import wizard as workaround
+#WEB_SBA_SPAN_FINAL.to_csv("WEB_SBA_SPAN_FINAL.txt", sep=',', encoding='utf-8-sig', index = False)
 
 
 ####### SOAP FILES #####################################################################################################
@@ -449,7 +449,7 @@ df_soap_merge_final['check3'] = df_soap_merge_final['check3'].round(1)
 df_soap_merge_final['Proficient'] = df_soap_merge_final['Proficient'].round(1)
 
 # Order and Select Columns by index
-df_soap_merge_final = df_soap_merge_final.iloc[:, np.r_[0,1,2,3,8,9,10,11,12,13]]
+df_soap_merge_final = df_soap_merge_final.iloc[:, np.r_[0,1,2,3,8,9,10,11,12]]
 
 # Remove 'All' Rows & State Charters if 1 school per district
 df_soap_merge_final.drop(df_soap_merge_final[df_soap_merge_final.Code == 'All'].index, inplace=True)
@@ -471,5 +471,6 @@ df_soap_merge_final['Sort_Code'] = df_soap_merge_final['Sort_Code'].map(sort_cod
 
 
 
-#df_soap_merge_final.to_csv("DF_SOAP_SBA_SPAN_FINAL.csv", sep=',', encoding='utf-8', index = False)
+df_soap_merge_final.to_csv("DF_SOAP_SBA_SPAN_FINAL07192019.csv", sep=',', encoding='utf-8', index = False)
+
 
